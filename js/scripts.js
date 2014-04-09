@@ -18,6 +18,7 @@ function fbInit()
 
         FB.getLoginStatus(function(response) {
             if (response.status == 'connected') {
+                showButtonsConnected();
             } else {
                 doFBLogin();
             }
@@ -28,12 +29,19 @@ function fbInit()
         return;
     }
     alert("show")
-    showButtons();
 }
 
-function showButtons()
+function showButtonsConnected()
 {
-    $("input").css("display","inline-block");
+    $("#fbLogin").css("display","none");
+    $("#fbStatus").css("display","inline-block");
+    $("#fbLogout").css("display","inline-block");
+}
+function showButtonsUnConnected()
+{
+    $("#fbLogin").css("display","inline-block");
+    $("#fbStatus").css("display","inline-block");
+    $("#fbLogout").css("display","none");
 }
 
 function doFBLogin() {
@@ -42,17 +50,20 @@ function doFBLogin() {
         log("getLoginStatus");
         if (response.status === 'connected') {
             alert("fbLogin connected");
+            showButtonsConnected();
             enterFBapp(response);
         } else {
             FB.login(function(response)
             {
                 log("login start");
                 if (response.authResponse) {
+                    showButtonsConnected
                     enterFBapp(response);
                 }
                 else
                 {// user cancelled login zustat na strance
                     log("user cancelled login");
+                    showButtonsUnConnected();
                 }
             }, {
                 scope: 'email'
@@ -65,6 +76,7 @@ function doFBlogout()
 {
     FB.logout(function(){
         alert("loged out");
+        showButtonsUnConnected();
     });
 }
 
