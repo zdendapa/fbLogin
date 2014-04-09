@@ -5,7 +5,7 @@ function onDeviceReady()
 {
     alert("onDeviceReady");
     fbInit();
-    //doFBLogin();
+
 }
 
 function fbInit()
@@ -16,9 +16,20 @@ function fbInit()
             nativeInterface: CDV.FB,
             useCachedDialogs: false
         });
+
+        FB.getLoginStatus(function(response) {
+            if (response.status == 'connected') {
+                //alert('logged in');
+            } else {
+                doFBlogout();
+            }
+        });
+
     } catch (e) {
         log("Error facebook inicializace:" +e);
+        return;
     }
+
 }
 
 
@@ -54,7 +65,9 @@ function doFBlogout()
     });
 }
 
-function fbStatus() {
+
+
+function fbStatusShow() {
     FB.getLoginStatus(function(response) {
         if (response.status == 'connected') {
             alert('logged in');
