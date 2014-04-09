@@ -33,12 +33,15 @@ function fbInit()
 
 function showButtonsConnected()
 {
+    /*
     $("#fbLogin").css("display","none");
     $("#fbStatus").css("display","inline-block");
     $("#fbLogout").css("display","inline-block");
+    */
 }
 function showButtonsUnConnected()
 {
+
     $("#fbLogin").css("display","inline-block");
     $("#fbStatus").css("display","inline-block");
     $("#fbLogout").css("display","none");
