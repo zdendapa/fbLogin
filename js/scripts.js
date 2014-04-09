@@ -20,6 +20,7 @@ function fbInit()
             if (response.status == 'connected') {
                 showButtonsConnected();
             } else {
+                alert("doFBLogin");
                 doFBLogin();
             }
         });
@@ -44,7 +45,7 @@ function showButtonsUnConnected()
 }
 
 function doFBLogin() {
-    log("doFBLogin start");
+    alert("doFBLogin start");
     FB.getLoginStatus(function(response) {
         log("getLoginStatus");
         if (response.status === 'connected') {
@@ -56,7 +57,7 @@ function doFBLogin() {
             {
                 log("login start");
                 if (response.authResponse) {
-                    showButtonsConnected
+                    showButtonsConnected();
                     enterFBapp(response);
                 }
                 else
