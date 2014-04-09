@@ -39,19 +39,15 @@
 
 
 <div>
-
+    <input type="button" onclick="doFBLogin()" value="fbLogin">
+v1
 </div>
 
 <script type="text/javascript">
-    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
-        //document.addEventListener("onDeviceReady", cacheInit, false);
-        document.addEventListener("onDeviceReady", onDeviceReady, false);
-    } else {
-        window.addEventListener('load', function() {
-            //cacheInit();
-            onDeviceReady();
-        }, false);
-    }
+alert("davam deviceReady listener");
+       document.addEventListener("onDeviceReady", onDeviceReady, false);
+       //onDeviceReady();
+
 </script>
 </body>
 </html>

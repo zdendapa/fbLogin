@@ -5,7 +5,7 @@ function onDeviceReady()
 {
     alert("onDeviceReady");
     fbInit();
-    doFBLogin();
+    //doFBLogin();
 }
 
 function fbInit()
