@@ -1,11 +1,6 @@
 
 var fbAppID = "207808999413453";
 
-function init()
-{
-    document.addEventListener('deviceready', this.onDeviceReady, false);
-}
-
 function onDeviceReady()
 {
     alert("onDeviceReady");
