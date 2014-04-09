@@ -27,12 +27,13 @@ function fbInit()
         log("Error facebook inicializace:" +e);
         return;
     }
+    alert("show")
     showButtons();
 }
 
 function showButtons()
 {
-    $("input").css("display","block");
+    $("input").css("display","inline-block");
 }
 
 function doFBLogin() {
