@@ -1,11 +1,10 @@
-
+// insert your own fbAppID (https://developers.facebook.com/apps/207808999413453)
 var fbAppID = "207808999413453";
 
 function onDeviceReady()
 {
     alert("onDeviceReady");
     fbInit();
-
 }
 
 function fbInit()
@@ -19,7 +18,6 @@ function fbInit()
 
         FB.getLoginStatus(function(response) {
             if (response.status == 'connected') {
-                //alert('logged in');
             } else {
                 doFBLogin();
             }
@@ -29,7 +27,6 @@ function fbInit()
         log("Error facebook inicializace:" +e);
         return;
     }
-
 }
 
 
@@ -90,6 +87,11 @@ function enterFBapp(response) {
         log(response.id + response.first_name + response.last_name + response.gender);
         alert(response.id + response.first_name + response.last_name + response.gender);
         /*
+
+        follow login in your bac-end system
+        you should send the response that your back-end system verify and accordingly logged in
+
+
         $.ajax({
             type: "POST",
             url: appServerUrlPreffix + "/api/loginFB.json",
