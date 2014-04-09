@@ -4,7 +4,7 @@ var fbAppID = "207808999413453";
 function onDeviceReady()
 {
     alert("onDeviceReady");
-    fbInit();
+    //fbInit();
 }
 
 function fbInit()
@@ -27,8 +27,13 @@ function fbInit()
         log("Error facebook inicializace:" +e);
         return;
     }
+    showButtons();
 }
 
+function showButtons()
+{
+    $("input").css("display","block");
+}
 
 function doFBLogin() {
     log("doFBLogin start");
