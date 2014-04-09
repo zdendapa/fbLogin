@@ -47,6 +47,13 @@ function doFBLogin() {
     });
 }
 
+function doFBlogout()
+{
+    FB.logout(function(){
+        alert("loged out");
+    });
+}
+
 
 
 
