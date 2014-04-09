@@ -53,6 +53,8 @@ function doFBLogin() {
 }
 
 
+
+
 function enterFBapp(response) {
     FB.api('/me', function(response)
     {
@@ -104,5 +106,9 @@ function enterFBapp(response) {
         });
         */
     });
+
+}
+function log(msg)
+{
 
 }

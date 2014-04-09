@@ -6,7 +6,7 @@
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
     <!-- <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=2, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
     <meta name="viewport" content="user-scalable=yes, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
-    <script src="svaca/js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
 
     <script src="phonegap.js"></script>
 
@@ -41,9 +41,17 @@
 <div>
 
 </div>
-<script type="text/javascript" src="js/index.js"></script>
+
 <script type="text/javascript">
-    init();
+    if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|IEMobile)/)) {
+        //document.addEventListener("onDeviceReady", cacheInit, false);
+        document.addEventListener("onDeviceReady", init, false);
+    } else {
+        window.addEventListener('load', function() {
+            //cacheInit();
+            onDeviceReady();
+        }, false);
+    }
 </script>
 </body>
 </html>
