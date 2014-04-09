@@ -20,8 +20,7 @@ function fbInit()
             if (response.status == 'connected') {
                 showButtonsConnected();
             } else {
-                alert("doFBLogin");
-                doFBLogin();
+                showButtonsUnConnected();
             }
         });
 
