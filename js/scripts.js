@@ -4,7 +4,7 @@ var fbAppID = "207808999413453";
 function onDeviceReady()
 {
     alert("onDeviceReady");
-    //fbInit();
+    fbInit();
 }
 
 function fbInit()
