@@ -54,7 +54,15 @@ function doFBlogout()
     });
 }
 
-
+function fbStatus() {
+    FB.getLoginStatus(function(response) {
+        if (response.status == 'connected') {
+            alert('logged in');
+        } else {
+            alert('not logged in');
+        }
+    });
+}
 
 
 function enterFBapp(response) {
