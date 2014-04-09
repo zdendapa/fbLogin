@@ -21,7 +21,7 @@ function fbInit()
             if (response.status == 'connected') {
                 //alert('logged in');
             } else {
-                doFBlogout();
+                doFBLogin();
             }
         });
 
