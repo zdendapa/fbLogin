@@ -28,7 +28,6 @@ function fbInit()
         log("Error facebook inicializace:" +e);
         return;
     }
-    alert("show")
 }
 
 function showButtonsConnected()
