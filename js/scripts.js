@@ -33,11 +33,9 @@ function fbInit()
 
 function showButtonsConnected()
 {
-    /*
     $("#fbLogin").css("display","none");
     $("#fbStatus").css("display","inline-block");
     $("#fbLogout").css("display","inline-block");
-    */
 }
 function showButtonsUnConnected()
 {
